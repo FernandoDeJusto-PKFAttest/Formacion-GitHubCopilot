@@ -1,0 +1,169 @@
+<!--
+=============================================================
+EJERCICIO 5 — FetchXML: Consultas en Dynamics 365 / Power Platform
+=============================================================
+
+🎯 OBJETIVO: Usar Copilot para generar y optimizar consultas
+   FetchXML, el lenguaje de consulta propio de Dynamics 365
+   y Power Apps / Dataverse.
+
+📋 INSTRUCCIONES:
+   1. Para GENERAR una query: describe en un comentario XML
+      qué datos necesitas y deja que Copilot complete el FetchXML
+   2. Para EXPLICAR: selecciona la query en el chat y usa /explain
+   3. Para OPTIMIZAR: usa /optimize o pide "¿cómo mejoro el rendimiento?"
+
+💡 TIP IMPORTANTE: En el chat, especifica siempre el contexto:
+   "Estoy trabajando con Dynamics 365 / Dataverse y necesito
+   una query FetchXML que..."
+
+⚠️  FetchXML es menos frecuente en el entrenamiento de Copilot
+   que C# o JS. Las sugerencias pueden necesitar más refinamiento.
+   Itera sobre las respuestas hasta obtener lo que necesitas.
+=============================================================
+-->
+
+<!-- ==========================================================
+     PARTE A — Genera las queries desde cero
+     ========================================================== -->
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.1 — Query básica con filtros
+-----------------------------------------------------------
+
+💬 INSTRUCCIÓN PARA EL CHAT:
+   Escribe en el chat de Copilot:
+
+   "Genera una query FetchXML para Dynamics 365 que obtenga
+   todos los contactos (entity: contact) cuyo email termine
+   en @pkf-attest.com, que estén activos (statecode = 0),
+   ordenados por apellido (lastname) ascendente.
+   Devuelve: fullname, emailaddress1, telephone1, createdon"
+
+👇 Pega aquí la query que genere Copilot:
+-->
+<fetch>
+  <!-- Copilot completará esta query -->
+</fetch>
+
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.2 — Query con JOIN entre entidades
+-----------------------------------------------------------
+
+💬 INSTRUCCIÓN PARA EL CHAT:
+   "Genera una query FetchXML que obtenga todas las
+   oportunidades (opportunity) abiertas junto con el nombre
+   del cliente (account) relacionado y el propietario (systemuser).
+   Filtra por oportunidades creadas en los últimos 90 días.
+   Devuelve: name, estimatedvalue, closedate, account.name,
+   systemuser.fullname"
+
+👇 Pega aquí la query:
+-->
+<fetch>
+  <!-- Copilot completará esta query con link-entity -->
+</fetch>
+
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.3 — Query con agregación (count y sum)
+-----------------------------------------------------------
+
+👇 Coloca el cursor después de este comentario XML y pulsa ENTER.
+   Describe lo que necesitas en lenguaje natural dentro del comentario
+   o deja que Copilot proponga una query de agregación.
+
+Query FetchXML con aggregate="true" que cuente el número de
+casos (incident) por estado y calcule el tiempo medio de resolución.
+Agrupa por statuscode y devuelve el count y el average de
+resolvedbyon - createdon.
+-->
+<fetch aggregate="true">
+  <!-- 👇 Copilot completará aquí -->
+</fetch>
+
+
+<!-- ==========================================================
+     PARTE B — Explica estas queries existentes
+     ========================================================== -->
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.4 — ¿Qué hace esta query? Usa /explain
+-----------------------------------------------------------
+
+💬 INSTRUCCIÓN PARA EL CHAT:
+   Selecciona la query completa de abajo y escribe en el chat:
+   "/explain ¿Qué datos devuelve esta query FetchXML?
+   Explica cada sección: fetch, entity, attribute, filter,
+   link-entity y order"
+-->
+<fetch top="50" distinct="false">
+  <entity name="account">
+    <attribute name="name" />
+    <attribute name="revenue" />
+    <attribute name="numberofemployees" />
+    <attribute name="industrycode" />
+    <filter type="and">
+      <condition attribute="statecode" operator="eq" value="0" />
+      <condition attribute="revenue" operator="gt" value="1000000" />
+      <condition attribute="industrycode" operator="in">
+        <value>7</value>
+        <value>10</value>
+        <value>14</value>
+      </condition>
+    </filter>
+    <link-entity name="contact" from="parentcustomerid" to="accountid" link-type="inner">
+      <attribute name="fullname" alias="contacto_principal" />
+      <attribute name="emailaddress1" alias="email_contacto" />
+      <filter>
+        <condition attribute="decisionmaker" operator="eq" value="1" />
+      </filter>
+    </link-entity>
+    <order attribute="revenue" descending="true" />
+  </entity>
+</fetch>
+
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.5 — Optimización y errores comunes
+-----------------------------------------------------------
+
+💬 INSTRUCCIÓN PARA EL CHAT:
+   Selecciona la query de abajo y escribe:
+   "/fix Esta query FetchXML tarda mucho en ejecutarse.
+   ¿Puedes identificar problemas de rendimiento y sugerir mejoras?
+   También comprueba si hay errores de sintaxis."
+-->
+<fetch>
+  <entity name="contact">
+    <all-attributes/>
+    <link-entity name="account" from="accountid" to="parentcustomerid" link-type="outer">
+      <all-attributes/>
+      <link-entity name="opportunity" from="customerid" to="accountid" link-type="outer">
+        <all-attributes/>
+        <link-entity name="systemuser" from="systemuserid" to="ownerid" link-type="outer">
+          <all-attributes/>
+        </link-entity>
+      </link-entity>
+    </link-entity>
+  </entity>
+</fetch>
+
+
+<!-- ==========================================================
+     PARTE C — Convertir FetchXML a otras formas
+     ========================================================== -->
+
+<!-- -----------------------------------------------------------
+EJERCICIO 5.6 — Convertir FetchXML a código C# con SDK
+-----------------------------------------------------------
+
+💬 INSTRUCCIÓN PARA EL CHAT:
+   Selecciona la query del Ejercicio 5.4 y escribe:
+   "Convierte esta query FetchXML a código C# usando
+   el Dataverse SDK (Microsoft.PowerPlatform.Dataverse.Client).
+   Usa FetchExpression y maneja posibles excepciones."
+
+👇 Pega el código C# generado aquí:
+-->

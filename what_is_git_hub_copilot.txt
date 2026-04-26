@@ -1,0 +1,24 @@
+¿Qué es GitHub Copilot?
+GitHub Copilot es un asistente de programación con Inteligencia Artificial desarrollado por GitHub y OpenAI. En la práctica, funciona como un compañero virtual dentro de tu editor de código que te ayuda a programar más rápido.
+
+Lo que ES:
+
+Un autocompletador inteligente que sugiere código en tiempo real mientras escribes, basándose en el contexto de tu archivo
+Un asistente de chat integrado en VS Code y Visual Studio con el que puedes conversar en lenguaje natural para pedir código, explicaciones o correcciones
+Un generador de tests que crea automáticamente pruebas unitarias para tu código existente
+Un explicador de código que te dice en español qué hace cualquier función, clase o fragmento que selecciones
+Un detector de errores que identifica bugs y propone correcciones concretas
+Un generador de documentación que escribe los comentarios XMLDoc o JSDoc de tus métodos automáticamente
+Un asistente de terminal que te ayuda con comandos de consola y scripts
+Una herramienta de aprendizaje con la que puedes entender código que no conoces o aprender un nuevo lenguaje
+
+
+Lo que NO ES:
+
+No es un sustituto del desarrollador — no entiende los requisitos de negocio ni toma decisiones de arquitectura
+No es infalible — siempre hay que revisar el código que genera
+No es un buscador de internet — trabaja con el contexto de tu proyecto, no busca en la web
+No es autónomo por defecto — solo actúa cuando tú se lo pides (excepto en Agent Mode, que requiere activación explícita)
+
+
+En una frase: Copilot hace el trabajo repetitivo y mecánico del código para que tú puedas centrarte en lo que requiere tu criterio como desarrollador.
