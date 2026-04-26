@@ -121,4 +121,4 @@ https://docs.github.com/es/copilot/concepts/agents/about-agent-skills
 
 
 *PKF Attest · Formación GitHub Copilot · Nivel Iniciación*
-*Creado por Fernando De Justo Domínguez — fernando.dejusto@pkf-attest.com*
+*Creado por Fernando De Justo Domínguez — fernando.dejusto@pkf-attest.es*
