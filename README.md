@@ -104,7 +104,7 @@ README.md
 1. **No copies y pegues directamente** — escribe los comentarios tú mismo para activar Copilot
 2. **Itera sobre las respuestas** — si la sugerencia no es perfecta, pide variaciones
 3. **Usa `Ctrl+Enter`** para comparar hasta 10 alternativas antes de elegir
-4. **Comparte los prompts** que funcionan bien con el resto del equipo
+4. **Comparte los prompts** que funcionan bien con el resto del equipo. Vamos a gamificarlo. El que primero haga cada ejercicio se lleva un punto.
 5. **El ejercicio 10 es el más importante** — integra todo lo aprendido
 
 ---
