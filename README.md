@@ -114,6 +114,33 @@ https://code.visualstudio.com/docs
 
 https://docs.github.com/es/copilot/concepts/agents/about-agent-skills
 
+Ver qué tenemos 
+Copilot
+
+GitHub Docs
+https://docs.github.com/es
+
+Certificaciones
+
+https://learn.github.com/certification/COPILOT
+
+https://www.pluralsight.com/courses/github-copilot-fundamentals-ai-paired-programming
+
+https://learn.github.com/courses
+
+Aprender sobre GitHub 
+
+https://docs.github.com/es
+
+Ejemplos de GitHub de Copilot
+
+https://docs.github.com/es/copilot/tutorials/copilot-chat-cookbook
+
+Ingeniería de Mensajes para GitHub Copilot CHAT
+
+https://docs.github.com/es/copilot/concepts/prompting/prompt-engineering
+
+
 
 
 
