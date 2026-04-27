@@ -114,8 +114,10 @@ https://code.visualstudio.com/docs
 
 https://docs.github.com/es/copilot/concepts/agents/about-agent-skills
 
-Ver qué tenemos 
-Copilot
+
+Características de nuestro GitHub Copilot
+
+https://github.com/settings/copilot/features
 
 GitHub Docs
 https://docs.github.com/es
